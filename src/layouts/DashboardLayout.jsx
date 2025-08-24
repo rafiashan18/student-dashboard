@@ -19,7 +19,7 @@ const DashboardLayout = () => {
 
   return (
     <>
-      <div className="flex h-screen  text-gray-800 relative">
+      <div className="flex h-[100dvh]  text-gray-800 relative">
         {/* Mobile Overlay */}
         {(leftSidebarOpen || rightSidebarOpen) && (
           <div

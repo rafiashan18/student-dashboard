@@ -1,0 +1,251 @@
+@import "tailwindcss";
+
+/* Base body styling */
+body {
+  /* @apply min-h-screen transition-colors duration-300; */
+}
+
+/* Light theme (default) */
+:root {
+  /* Main brand colors */
+  --color-primary: #5d82f6;
+  --color-primary-hover: #4c6ef5;
+  --color-shadow-primary: #fff;
+
+  /* Background hierarchy */
+  --color-background: #d5e6f2;
+  --color-surface: #ffffff;
+  --color-surface-secondary: #d0ccde;
+  --color-surface-tertiary: #f8fafc;
+
+  /* Text hierarchy */
+  --color-text: #1a202c;
+  --color-text-secondary: #4a5568;
+  --color-text-muted: #718096;
+  --color-hover-text: #462f70;
+
+  /* Borders */
+  --color-border: #e2e8f0;
+  --color-border-secondary: #cbd5e1;
+  --color-search-border: #221c2d;
+
+  /* Button Chat Now  */
+  --color-btn:#5d82f6;
+  --color-btn-text:#fff;
+  --color-graph-bg:#5d82f6;
+
+  /* Dashboard specific colors */
+  --color-sidebar: #f8f2f2;
+  --color-card-minimal: #f6f2f3;
+
+  /* Course/Activity cards - these stay consistent */
+  --color-card-purple: #9157f9;
+  --color-card-blue: #5f81f5;
+  --color-card-orange: #ff5800;
+  --color-card-green: #01ce18;
+  --color-card-gray: #696a6e;
+  --color-card-light-purple: #cb84ff;
+
+  /* Status colors */
+  --color-success: #10b981;
+  --color-warning: #f59e0b;
+  --color-error: #ef4444;
+
+  /* Gradients */
+  --gradient-background: linear-gradient(to bottom, #d5e6f2 0%, #ffffff 100%);
+  --gradient-sidebar: linear-gradient(to bottom, #ffffff 70%, #e4f4ff 100%);
+  --gradient-card: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+}
+
+/* Dark theme */
+.dark {
+  /* Main brand colors - darker variants */
+  --color-primary: #342854;
+  --color-primary-hover: #1f1a2d;
+  --color-shadow-primary: #835dc858;
+
+  /* Background hierarchy - from your extracted colors */
+  --color-background: #5335cc;
+  --color-surface: #2f2254;
+  --color-surface-secondary: #28203e;
+  --color-surface-tertiary: #4c5777;
+
+  /* Text hierarchy - light colors for dark backgrounds */
+  --color-text: #ffffff;
+  --color-text-secondary: #e2e8f0;
+  --color-text-muted: #cbd5e1;
+  --color-hover-text: #9157f9;
+
+  /* Borders - subtle on dark */
+  --color-border: #403168;
+  --color-border-secondary: #4c5777;
+  --color-search-border: #9157f9;
+
+    /* Button Chat Now  */
+  --color-btn:#5d82f6;
+  --color-btn-text:#fff;
+  --color-graph-bg:#9157f9;
+
+
+  /* Dashboard specific */
+  --color-sidebar: #271756;
+  --color-card-minimal: #2d1c5b;
+
+  /* Course/Activity cards - keep same vibrant colors */
+  --color-card-purple: #9157f9;
+  --color-card-blue: #5f81f5;
+  --color-card-orange: #ff5800;
+  --color-card-green: #01ce18;
+  --color-card-gray: #696a6e;
+  --color-card-light-purple: #cb84ff;
+
+  /* Status colors - slightly brighter for dark mode */
+  --color-success: #22c55e;
+  --color-warning: #fbbf24;
+  --color-error: #f87171;
+
+  /* Dark gradients */
+  --gradient-background: linear-gradient(to bottom, #191331 0%, #271756 100%);
+  --gradient-sidebar: linear-gradient(to bottom, #241a43, #403168, #241a43);
+  --gradient-card: linear-gradient(135deg, #241a43 0%, #20283f 100%);
+}
+
+/* Apply background gradient to body */
+body {
+  background: var(--gradient-background);
+}
+
+/* Utility classes for your dashboard */
+@layer utilities {
+  .shadow-primary {
+    box-shadow: 0 4px 6px -1px var(--color-shadow-primary);;
+  }
+  /* Background utilities */
+  .bg-dashboard {
+    background: var(--gradient-background);
+  }
+  .bg-surface {
+    background-color: var(--color-surface);
+  }
+  .bg-surface-secondary {
+    background-color: var(--color-surface-secondary);
+  }
+  .bg-surface-tertiary {
+    background-color: var(--color-surface-tertiary);
+  }
+  /* .bg-sidebar { background: var(--gradient-sidebar); } */
+  .bg-gradient-sidebar {
+    background: var(--gradient-sidebar);
+  }
+  .bg-card-gradient {
+    background: var(--gradient-card);
+  }
+  .bg-card-minimal {
+    background-color: var(--color-card-minimal);
+  }
+
+  /* Text utilities */
+  .text-default {
+    color: var(--color-text);
+  }
+  .text-secondary {
+    color: var(--color-text-secondary);
+  }
+  .text-muted {
+    color: var(--color-text-muted);
+  }
+  .text-primary {
+    color: var(--color-primary);
+  }
+  .text-hover{
+    color: var(--color-hover-text);
+  }
+
+  /* Border utilities */
+  .border-default {
+    border-color: var(--color-border);
+  }
+  .border-secondary {
+    border-color: var(--color-border-secondary);
+  }
+  .border-search {
+    border-color: var(--color-search-border);
+  }
+    /* Button Chat Now  */
+  
+  .bg-btn {
+    background-color: var(--color-btn);
+  }
+  .text-btn {
+    color: var(--color-btn-text);
+  }
+  .bg-graph {
+    background-color: var(--color-graph-bg);
+  }
+
+  /* Interactive utilities */
+  .bg-primary {
+    background-color: var(--color-primary);
+    /* transition: background-color 5s ease; */
+  }
+  .bg-primary:hover {
+    background-color: var(--color-primary-hover);
+  }
+
+  /* Course card colors - consistent across themes */
+  .bg-course-purple {
+    background-color: var(--color-card-purple);
+  }
+  .bg-course-blue {
+    background-color: var(--color-card-blue);
+  }
+  .bg-course-orange {
+    background-color: var(--color-card-orange);
+  }
+  .bg-course-green {
+    background-color: var(--color-card-green);
+  }
+  .bg-course-gray {
+    background-color: var(--color-card-gray);
+  }
+  .bg-course-light-purple {
+    background-color: var(--color-card-light-purple);
+  }
+
+  /* Status colors */
+  .bg-success {
+    background-color: var(--color-success);
+  }
+  .bg-warning {
+    background-color: var(--color-warning);
+  }
+  .bg-error {
+    background-color: var(--color-error);
+  }
+  .text-success {
+    color: var(--color-success);
+  }
+  .text-warning {
+    color: var(--color-warning);
+  }
+  .text-error {
+    color: var(--color-error);
+  }
+
+  
+  .bg-chart-container {
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+  }
+
+  /* Avatar/Profile section */
+  .bg-avatar-section {
+    background-color: var(--color-surface-secondary);
+  }
+
+  /* Recommendation cards */
+  .bg-recommendation {
+    background-color: var(--color-surface);
+    border: 1px solid var(--color-border);
+  }
+}

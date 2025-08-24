@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { ArrowLeftToLine, Menu, X } from 'lucide-react'
 import LeftSidebar from '../components/dashboard/LeftSidebar'
 import TopBar from '../components/dashboard/TopBar'
@@ -8,10 +8,18 @@ import RightSidebar from '../components/dashboard/RightSidebar'
 const DashboardLayout = () => {
   const [leftSidebarOpen, setLeftSidebarOpen] = useState(false)
   const [rightSidebarOpen, setRightSidebarOpen] = useState(false)
+  useEffect(() => {
+  if (leftSidebarOpen || rightSidebarOpen) {
+    document.body.style.overflow = "hidden"   // disable background scroll
+  } else {
+    document.body.style.overflow = "auto"     // restore scroll
+  }
+}, [leftSidebarOpen, rightSidebarOpen])
+
 
   return (
     <>
-      <div className="flex h-screen overflow-y-hidden text-gray-800 relative">
+      <div className="flex h-screen  text-gray-800 relative">
         {/* Mobile Overlay */}
         {(leftSidebarOpen || rightSidebarOpen) && (
           <div

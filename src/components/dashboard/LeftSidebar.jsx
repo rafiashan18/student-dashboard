@@ -8,7 +8,7 @@ import logo from "../../assets/images/logo.png";
 const LeftSidebar = ({ onClose, showCloseButton = false }) => {
   const [loaded, setLoaded] = useState(false);
   return (
-    <aside className="h-screen w-56 p-2 flex flex-col gap-2 rounded-2xl">
+    <aside className="h-screen w-56 p-2 flex flex-col gap-2 rounded-2xl overflow-y-auto">
       <div className="bg-gradient-sidebar text-default flex flex-col gap-3 justify-between rounded-2xl h-full shadow-lg border border-default">
         <div>
           {/* Mobile Close Button */}

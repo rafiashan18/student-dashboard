@@ -1,6 +1,6 @@
 # student-dashboard
 **live:** https://student-dashboard-roan.vercel.app/
-#Styling & Animation:
+# Styling & Animation:
 Tailwind CSS 4.0 - Latest utility-first CSS framework
 GSAP - Professional-grade animation library
 Custom CSS Variables - Dynamic theming system

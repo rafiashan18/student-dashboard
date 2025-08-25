@@ -71,7 +71,7 @@ const DashboardLayout = () => {
           </header>
 
           {/* Main Content */}
-          <main className="flex-1 overflow-y-auto px-2">
+          <main className="flex-1 overflow-y-auto px-2 scrollbar-hide">
             <Dashboard />
           </main>
         </div>
